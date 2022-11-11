@@ -1,0 +1,57 @@
+#cd-main-div
+{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    display: flex;
+}
+
+#left-panel
+{
+    position: relative;
+    height: 100%;
+    width:15%;
+    display: block;
+}
+
+#rest-div
+{
+    position: relative;
+    height: 88%;
+    width:67%;
+    display: block;
+    left: 8%;
+    right: 10%;
+    top:4%;
+    bottom:8%;
+    border-style: ridge;
+    border-radius: 6px;
+}
+
+#rest-div-center
+{
+    position: relative;
+    height:90%;
+    display: block;
+    width:90%;
+    left:5%;
+    right:5%;
+    top:5%;
+    bottom:5%;
+}
+
+#rest-div-header
+{
+    position: relative;
+    height:10%;
+    width:100%;
+    display: flex;
+}
+
+#rest-div-body
+{
+    position: relative;
+    height: 90%;
+    width: 100%;
+    display: block;
+}

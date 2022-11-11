@@ -1,0 +1,126 @@
+<div id="app-register-main-div">
+    <div id="app-register-div-left">
+    </div>
+    <div id="app-register-div-body">
+        <div id="app-register-body-heading">
+            <h2 id="app-register-header-text">Application Registration Module</h2>
+        </div>
+        <div id="app-register-body-content">
+            <form id="register-app" ngNativeValidate>
+                <div id="app-name-div" class="app-register-main-class">
+                    <div id="app-name-label" class="app-register-label-class">
+                        <label> App Name: </label>
+                    </div>
+                    <div id="app-name-input" class="app-register-input-div">
+                        <input type="text" class="app-register-input" name="app-name" [(ngModel)]="appName" [ngModelOptions]="{standalone: true}" required> 
+                    </div>
+                    <div id="app-name-req" class="app-register-req">
+                        <label class="required"></label>
+                    </div>
+                </div>
+                <div id="app-code-div" class="app-register-main-class">
+                    <div id="app-code-label" class="app-register-label-class">
+                        <label> App Code: </label>
+                    </div>
+                    <div id="app-code-input" class="app-register-input-div">
+                        <input type="text" class="app-register-input" name="app-code" [(ngModel)]="appCode" [ngModelOptions]="{standalone: true}" required> 
+                    </div>
+                    <div id="app-code-req" class="app-register-req">
+                        <label class="required"></label>
+                    </div>
+                </div>
+                <label style="position:relative;left:5%;">Administrator of App:</label>
+                <div id="email-id-div" class="app-register-main-class">
+                    <div id="email-id-label" class="app-register-label-class">
+                        <label> Email Id: </label>
+                    </div>
+                    <div id="email-id-input" class="app-register-input-div">
+                        <input type="email" class="app-register-input" name="email-id" [(ngModel)]="emailId" [ngModelOptions]="{standalone: true}" required> 
+                    </div>
+                    <div id="email-id-req" class="app-register-req">
+                        <label class="required"></label>
+                    </div>
+                </div>
+                <div id="mob-no-div" class="app-register-main-class">
+                    <div id="mob-no-label" class="app-register-label-class">
+                        <label> Mob No: </label>
+                    </div>
+                    <div id="mob-no-input" class="app-register-input-div">
+                        <input type="text" class="app-register-input" name="mob-no" [(ngModel)]="mobNo" [ngModelOptions]="{standalone: true}" required> 
+                    </div>
+                    <div id="mob-no-req" class="app-register-req">
+                        <label class="required"></label>
+                    </div>
+                    <!-- <div *ngIf="!otpDiv" class="verify-email-class">
+                        <button id="verify-mob-button" (click)="sendOTP();">Send OTP</button>
+                    </div> -->
+                    <!-- <div *ngIf="otpDiv" style="display:flex;" class="verify-email-class">
+                        <p id="otp-div-p">Enter the OTP:</p>
+                        <input type="text" id="otp-div-input" [(ngModel)]="enteredOTP" [ngModelOptions]="{standalone: true}" required> 
+                    </div> -->
+                </div>
+                <div id="upload-file-div" class="app-register-main-class">
+                    <div id="upload-file-label" class="app-register-label-class">
+                        <label> File Upload: </label>
+                    </div>
+                    <div id="app-code-input" class="app-register-input-div">
+                        <input type="file" class="app-register-input" name="file-name" [(ngModel)]="fileName" value="Attach" accept=".pdf" [ngModelOptions]="{standalone: true}"> 
+                    </div>
+                    <!-- <div id="app-code-req" class="app-register-req">
+                        <label class="required"></label>
+                    </div> -->
+                </div>
+                <div *ngIf="clickedSendOTP" id="send-otp-div">
+                    <p>{{otpMsg}}</p>
+                </div>
+                <input type="submit" id="app-register-submit" value="Submit" (click)="createApplication();"/>
+            </form>
+            <div *ngIf="clickedSubmit" id="submit-div">
+                <p>{{submitMsg}}</p>
+            </div>
+            <div *ngIf="otpSentToRegAdmin" id="submit-div" data-toggle="modal" data-target="#appRegModal">
+                <button id="app-reg-admin-button">Verify OTP</button>
+            </div>
+        </div>
+    </div>
+    <div id="app-register-div-right">
+    </div>
+
+    <!-- Popup starts-->
+
+    <div class="modal fade" id="appRegModal" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="width:500px;" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body" style="padding:30px;">
+              <div class="form-title text-center" style="position:relative;top:-16px;">
+                <h4>Application Registration Module</h4>
+              </div>
+              <div class="d-flex flex-column text-center">
+                <form ngNativeValidate>
+                    <div style="display:flex;left:0%;width:100%;" class="verify-email-class">
+                        <p id="otp-div-p" style="width:30%;font-size: xx-small;top:3px;">Enter OTP for ref no:{{otpRefNo}}</p>
+                        <input type="text" id="otp-div-input" [(ngModel)]="enteredOTP" [ngModelOptions]="{standalone: true}" required> 
+                        <div id="email-id-req" style="width:0%;left:0%;top:-4px;" class="app-register-req">
+                            <label class="required"></label>
+                        </div>
+                    </div>
+                    <input type="submit" id="app-register-popup-verify" value="Verify" (click)="verifyAdminOTPAndCreateApplication();"/>
+                </form>
+                <div *ngIf="clickedVerify" id="popup-verify-div">
+                    <p>{{clickedVerifyMsg}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+
+    <!-- Popup ends-->
+
+</div>

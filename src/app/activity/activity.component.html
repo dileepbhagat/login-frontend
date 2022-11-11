@@ -1,0 +1,96 @@
+<div id="activity-master-main-div">
+    <div id="activity-master-header">
+        <h2 style="position:relative;text-align:center;">Admin</h2>
+    </div>
+    <div id="activity-master-body" style="overflow:auto;">
+        <div class="container" style="position:relative;left:12.5%;">
+            <div style="position:relative;display:flex;">
+                <h3>Activity Master</h3>
+                <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;width:6%;height:10%;left:2%;top:20px;position: relative;" data-toggle="modal" data-target="#addActivityModal">Add</button>
+                <button id="activity-show-hide-button" style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;width:6%;height:10%;left:6%;top:20px;position: relative;" (click)="showHideActivityMaster()">Hide</button>
+            </div>            
+            <table class="table" style="position:relative;width:75%;" id="activity-table-id">
+              <thead>
+                <tr>
+                  <th>Serial No</th>
+                  <th>Activity Name</th>
+                  <th>Activity Short Code</th>
+                </tr>
+              </thead>
+              <tbody id="activity-table-body-id">
+                <tr *ngFor="let activity of activityList" style="position:relative;width:100%;display:table-row;">
+                  <td style="position:relative;width:15%;">{{activity.serialNo}}</td>
+                  <td style="position:relative;width:35%;">{{activity.purposeName}}</td>
+                  <td style="position:relative;width:21%;">{{activity.purposeShortCode}}</td>
+                  <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:12%;height:10%;top:5px;position: relative;" (click)="editActivity(activity.serialNo);">Edit</button>
+                  <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:18%;top:5px;height:10%;position: relative;" (click)="deleteActivity(activity.serialNo);">Delete</button>
+                </tr>
+              </tbody>
+
+            </table>
+
+            <!-- Add Activity Popup html starts-->
+         <div class="modal fade" id="addActivityModal" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="position:relative;width:80%;">
+              <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-title text-center">
+                  <h4>Add Activity</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                  <form ngNativeValidate>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter activity" [(ngModel)]="newActivityName" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter activity Short Code" [(ngModel)]="newActivityShortCode" [ngModelOptions]="{standalone: true}" autocomplete="on" required>
+                    </div>
+                    <button style="position: relative; height: 100%; width: 40%" type="submit" class="btn btn-success" (click)="addNewActivity();">Save</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+        <!-- Add Activity html ends-->
+
+        <!-- Edit Activity Popup html starts-->
+        <div class="modal fade" id="editActivityModal" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="position:relative;width:80%;">
+              <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-title text-center">
+                  <h4>Edit Activity</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                  <form ngNativeValidate>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter activity" [(ngModel)]="activityName" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter activity Short Code" [(ngModel)]="activityShortCode" [ngModelOptions]="{standalone: true}" autocomplete="on" required>
+                    </div>
+                    <button style="position: relative; height: 100%; width: 40%" type="submit" class="btn btn-success" (click)="updateActivity();">Update</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+
+            
+        </div>
+    </div>
+</div>

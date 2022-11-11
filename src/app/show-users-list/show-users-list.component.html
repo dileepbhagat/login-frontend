@@ -1,0 +1,131 @@
+<div id="show-user-main-div">
+    <div id="show-user-top-div">
+        <h3 style="position:relative;text-align:center;vertical-align:middle;top:30%;color:black;left:2%;">Users List</h3>
+        <hr id="show-user-top-div-hr">
+    </div>
+    <div id="show-user-middle1-div" style="height:auto;">
+        <div id="show-user-input-div">
+            <div class="show-user-class" id="show-user-div">
+                <div class="show-user-class-div">
+                    <p class="show-user-class-div-p" style="left:15%;">Choose date:</p>
+                </div>
+                <div class="show-user-class-div-box" style="display:flex;">
+                    <div style="position:relative;height:100%;width:15%;">
+                        <p class="show-user-class-div-p">From</p>
+                    </div>
+                    <input class="show-user-class-box" style="width:25%;" type="date" max={{maxDate}} min="2021-01-01" id="first-date-id" name="first-date" [(ngModel)]="firstDate" [ngModelOptions]="{standalone: true}" required>
+                    <div style="position:relative;height:100%;width:5%;">
+                    </div>
+                    <div style="position:relative;height:100%;width:8%;">
+                        <p class="show-user-class-div-p">To</p>
+                    </div>
+                    <input class="show-user-class-box" style="width:25%;" type="date" max={{maxDate}} min="2021-01-01" id="last-date-id" name="last-date" [(ngModel)]="lastDate" [ngModelOptions]="{standalone: true}" required>
+                    <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:10%;top:25%;width:15%;height:50%;position: relative;" (click)="showUserList();">Submit</button>
+                </div>
+            </div>
+            <div *ngIf="error" style="position:relative;height:5%;width:100%">
+                <p style="position:relative;width:50%;text-align:center;color:red;left:35%;">{{errorMsg}}</p>
+            </div>
+        </div>
+        <div id="show-user-output-div" *ngIf="dataFetched" style="height:80%;">
+            <table class="table" style="position:relative;width:75%;" id="show-user-table-id">
+                <thead>
+                  <tr>
+                    <th>Serial No</th>
+                    <th>Login Id</th>
+                    <th>Login Time</th>
+                  </tr>
+                </thead>
+                <tbody id="show-user-table-body-id">
+                  <tr *ngFor="let activeUsers of activeUsersList" style="position:relative;width:100%;display:table-row;">
+                    <td style="position:relative;width:15%;">{{activeUsers.serialNo}}</td>
+                    <td style="position:relative;width:35%;">{{activeUsers.loginId}}</td>
+                    <td style="position:relative;width:21%;">{{activeUsers.loginTime}}</td>
+                  </tr>
+                </tbody>
+  
+              </table>
+        </div>
+    </div>
+    <div style="position:relative;height:auto;width:100%">
+    </div>
+    <div id="show-user-middle2-div" style="height:auto;" *ngIf="dataFetched">
+        <div id="show-user-top-div-data">
+            <div id="show-user-top-div-div">
+                <p style="font-weight:600;">Top 5 users</p>
+            </div>
+            <div id="show-user-top-div-table">
+                <table class="table" style="position:relative;width:75%;" id="show-user-table-id">
+                    <thead>
+                      <tr>
+                        <th>Serial No</th>
+                        <th>Login Id</th>
+                        <th>Frequency</th>
+                      </tr>
+                    </thead>
+                    <tbody id="show-user-table-body-id">
+                      <tr *ngFor="let activeUsers of activeTopUsersList" style="position:relative;width:100%;display:table-row;">
+                        <td style="position:relative;width:15%;">{{activeUsers.serialNo}}</td>
+                        <td style="position:relative;width:35%;">{{activeUsers.loginId}}</td>
+                        <td style="position:relative;width:21%;">{{activeUsers.frequency}}</td>
+                      </tr>
+                    </tbody>
+      
+                  </table>
+            </div>
+            
+        </div>
+
+        <div style="position:relative;height:4%;width:100%;">
+        </div>
+
+        <div id="show-user-bottom-div-data">
+            <p style="font-weight:600;">Bottom 5 users</p>
+            <div id="show-user-top-div-table">
+                <table class="table" style="position:relative;width:75%;" id="show-user-table-id">
+                    <thead>
+                      <tr>
+                        <th>Serial No</th>
+                        <th>Login Id</th>
+                        <th>Frequency</th>
+                      </tr>
+                    </thead>
+                    <tbody id="show-user-table-body-id">
+                      <tr *ngFor="let activeUsers of activeBottomUsersList" style="position:relative;width:100%;display:table-row;">
+                        <td style="position:relative;width:15%;">{{activeUsers.serialNo}}</td>
+                        <td style="position:relative;width:35%;">{{activeUsers.loginId}}</td>
+                        <td style="position:relative;width:21%;">{{activeUsers.frequency}}</td>
+                      </tr>
+                    </tbody>
+      
+                  </table>
+            </div>
+        </div>
+    </div>
+    <div id="show-user-bottom-division-div" style="height:auto;left:25%;width:50%;" *ngIf="dataFetched">
+      <div id="show-user-bottom-division-div-data">
+            <p style="font-weight:600;">Inactive Users</p>
+        <div id="show-user-top-div-table">
+            <table class="table" style="position:relative;width:75%;" id="show-user-table-id">
+                <thead>
+                  <tr>
+                    <th>Serial No</th>
+                    <th>Login Id</th>
+                    <th>Mobile No</th>
+                  </tr>
+                </thead>
+                <tbody id="show-user-table-body-id">
+                  <tr *ngFor="let activeUsers of unActiveUsersList" style="position:relative;width:100%;display:table-row;">
+                    <td style="position:relative;width:15%;">{{activeUsers.serialNo}}</td>
+                    <td style="position:relative;width:35%;">{{activeUsers.loginId}}</td>
+                    <td style="position:relative;width:21%;">{{activeUsers.mobNo}}</td>
+                  </tr>
+                </tbody>
+  
+              </table>
+        </div>
+        
+    </div>
+    </div>
+
+</div>

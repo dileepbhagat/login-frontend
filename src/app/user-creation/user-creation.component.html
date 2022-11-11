@@ -1,0 +1,69 @@
+<div id="create-user-main-div">
+    <div id="create-user-header-div">
+        <h2 style="position:relative;font-weight:600;text-align:center;color:slateblue;top:25%;">User Creation</h2>
+    </div>
+    <div id="create-user-body-div">
+        <div id="create-user-body-left">
+
+        </div>
+        <div id="create-user-body-middle">
+            <div class="input-class" id="email-div">
+                <div style="position:relative;height:100%;width:20%;display:block;font-weight:600;">
+                    <p>Email:</p>
+                </div>
+                <div style="position:relative;height:100%;width:5%;display:block;">
+                </div>
+                <div style="position:relative;height:100%;width:70%;display:block;">
+                    <input type="text" style="position: relative;width:100%;height:65%;" name="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div class="gap-class">
+            </div>
+            <div class="input-class" id="mob-div">
+                <div style="position:relative;height:100%;width:20%;display:block;font-weight:600;">
+                    <p>Mobile No:</p>
+                </div>
+                <div style="position:relative;height:100%;width:5%;display:block;">
+                </div>
+                <div style="position:relative;height:100%;width:70%;display:block;">
+                    <input type="text" style="position: relative;width:100%;height:65%;" name="mobileNo" [(ngModel)]="mobileNo" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div class="gap-class">
+            </div>
+            <div *ngIf="!otpSent" class="input-class" id="submit-div">
+                <input type="submit" id="sent-otp-submit" value="Submit" (click)="sentOtpToAdminAndUser();"/>
+            </div>
+            <p *ngIf="submitClicked" style="position: relative;text-align: center;color: red;left: 7%;">{{submitMsg}}</p>
+            <div *ngIf="otpSent" class="input-class" id="admin-otp-div">
+                <div style="position:relative;height:100%;width:20%;display:block;font-weight:600;">
+                    <p>Enter Admin Otp:</p>
+                </div>
+                <div style="position:relative;height:100%;width:5%;display:block;">
+                </div>
+                <div style="position:relative;height:100%;width:70%;display:block;">
+                    <input type="text" style="position: relative;width:100%;height:65%;" name="adminOtp" [(ngModel)]="adminOtp" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div class="gap-class">
+            </div>
+            <div *ngIf="otpSent" class="input-class" id="user-otp-div">
+                <div style="position:relative;height:100%;width:20%;display:block;font-weight:600;">
+                    <p>Enter User Otp:</p>
+                </div>
+                <div style="position:relative;height:100%;width:5%;display:block;">
+                </div>
+                <div style="position:relative;height:100%;width:70%;display:block;">
+                    <input type="text" style="position: relative;width:100%;height:65%;" name="userOtp" [(ngModel)]="userOtp" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div *ngIf="otpSent" class="input-class" id="final-submit-div">
+                <input type="submit" id="validate-otp-submit" value="Submit" (click)="validateAdminAndUserOTP();"/>
+            </div>
+            <p *ngIf="finalSubmitClicked" style="position: relative;text-align: center;color: red;left: 7%;">{{finalSubmitMsg}}</p>
+        </div>
+        <div id="create-user-body-right">
+
+        </div>
+    </div>
+</div>

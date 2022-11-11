@@ -1,0 +1,285 @@
+<div id="profile-main-div">
+    <div class="profile-space">
+
+    </div>
+    <div id="profile-center-div" style="overflow:auto;">
+        <div style="position:relative;display:block;height:2%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-1">
+            <div class="profile-left-class-div">
+                <p class="profile-left-class-div-p">Plant Name:</p>
+            </div>
+            <div class="profile-left-class-div-box">
+                <input class="profile-left-class-box" type="text" name="plant-name" [(ngModel)]="plantName" [ngModelOptions]="{standalone: true}" required>
+                <label class="required"></label> 
+            </div>
+        </div>
+        <div class="profile-left-class" id="profile-left-div-2">
+            <div class="profile-left-class-div">
+                <p class="profile-left-class-div-p">Address:</p>
+            </div>
+            <div class="profile-left-class-div-box">
+                <input class="profile-left-class-box" type="text" name="address" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" required>
+                <label class="required"></label> 
+            </div>
+        </div>
+        <div class="profile-left-class" id="profile-left-div-3">
+            <div class="profile-left-class-div">
+                <p class="profile-left-class-div-p">Drug License:</p>
+            </div>
+            <div class="profile-left-class-div-box" style="display:flex;">
+                <input class="profile-left-class-box" style="width:50%;" type="text" name="drug-license" [(ngModel)]="drugLicense" [ngModelOptions]="{standalone: true}" required>
+                <label class="required" style="position:relative;top:20%;"></label>
+                <div style="position:relative;display:block;height:100%;width:2%;"></div>
+                <div style="position: relative;display:block; width:12%;height:90%;">
+                <input id="drug-license-file-id" class="profile-left-class-box" style="width:78%;height:56%;" type="file" value="Attach" name="drug-license-file" [(ngModel)]="drugLicenseFile" [ngModelOptions]="{standalone: true}" (change)="changeFileName($event);" accept=".pdf" required>
+                <p style="position:relative;width:100%;height: 40%;top:25%;font-size: smaller;color:green;word-wrap: break-word;">{{drugLicenseFile}}</p>
+                </div>
+                <label class="required" style="position:relative;top:20%;left:-2.5%;"></label>
+            </div>
+        </div>
+        <div class="profile-left-class" id="profile-left-div-4" style="height:9%;">
+            <div class="profile-left-class-div">
+                <p class="profile-left-class-div-p">Validity</p>
+            </div>
+            <div class="profile-left-class-div-box" style="display:flex;">
+                <div style="position:relative;height:100%;width:6%;">
+                    <p class="profile-left-class-div-p" style="left:5%;">From</p>
+                </div>
+                <input class="profile-left-class-box" style="width:15%;" type="date" name="validity-from-date" [(ngModel)]="validityFromDate" [ngModelOptions]="{standalone: true}" required>
+                <div style="position:relative;height:100%;width:4%;">
+                </div>
+                <div style="position:relative;height:100%;width:7%;">
+                    <p class="profile-left-class-div-p" style="left:5%;">To</p>
+                </div>
+                <input class="profile-left-class-box" style="width:15%;" type="date" name="validity-to-date" [(ngModel)]="validityToDate" [ngModelOptions]="{standalone: true}" required>
+            </div>
+        </div>
+        <div style="position:relative;display:block;height:0.5%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-5" style="height:8%;">
+            <div class="profile-left-class-div">
+            </div>
+            <div class="profile-left-class-div-box" style="display:flex;">
+                <input class="profile-left-class-box" type="checkbox" name="renewal" style="position:relative;width:3%;height:50%;">
+                <div style="position:relative;height:100%;width:20%;left:3%;">
+                    <p class="profile-left-class-div-p" style="top:30%;left:0%;">If Renewal is under process</p>
+                </div>
+                <div style="position:relative;height:100%;width:28%;">
+                </div>
+                <input class="profile-left-class-box" style="width:14%;height:75%;top:10%;" type="file" value="Attach" name="renewal-file" [(ngModel)]="renewalFile" [ngModelOptions]="{standalone: true}" accept=".pdf" required>
+            </div>
+        </div>
+        <div style="position:relative;display:block;height:0.5%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-6" style="height:8%;">
+            <div class="profile-left-class-div">
+            </div>
+            <div class="profile-left-class-div-box" style="display:flex;">
+                <input class="profile-left-class-box" id="psycho-checkbox-id" type="checkbox" (click)="enableDisablePsychoPopup($event)" name="renewal" style="position:relative;width:3%;height:50%;top:12%;">
+                <input data-toggle="modal" id="psycho-button-id" data-target="#addDeletePsySub" class="profile-left-class-box" style="height:100%;top:0%;width:25%;left:3%;text-align: center;opacity: 0.5;cursor:pointer;" type="button" name="psychotropics-substance" value="Psychotropics" [(ngModel)]="psychotropicSubstance" [ngModelOptions]="{standalone: true}" disabled required>
+                <div style="position:relative;height:100%;width:5%;">
+                </div>
+                <!-- <ng-multiselect-dropdown [placeholder]="'Select the substances'" [settings]="dropdownSettings" style="position: relative;" [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)"></ng-multiselect-dropdown>-->
+                <input style="position: relative;width:18.5%;cursor:pointer;overflow-x: auto;font-size: smaller;" id="psycho-substance-show-id" value="Substances selected so far" type="button" />
+            </div>
+        </div>
+        <div style="position:relative;display:block;height:1.5%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-7" style="height:8%;">
+            <div class="profile-left-class-div">
+            </div>
+            <div class="profile-left-class-div-box" style="display:flex;">
+                <input class="profile-left-class-box" id="narcotics-checkbox-id" type="checkbox" (click)="enableDisableNarcoPopup($event)" name="renewal" style="position:relative;width:3%;height:50%;top:12%;">
+                <input data-toggle="modal" id="narcotics-button-id" data-target="#addDeleteNarcoSub" class="profile-left-class-box" style="height:100%;top:0%;width:25%;left:3%;text-align: center;opacity: 0.5;cursor:pointer;" type="button" name="narcotics-substance" value="Narcotics" [(ngModel)]="narcoticsSubstance" [ngModelOptions]="{standalone: true}" disabled required>
+                <div style="position:relative;height:100%;width:5%;">
+                </div>
+                <input style="position: relative;width:18.5%;cursor:pointer;overflow-x: auto;font-size: smaller;" id="narco-substance-show-id" value="Substances selected so far" type="button"/>
+            </div>
+        </div>
+        <div style="position:relative;display:block;height:1.5%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-8" style="height:8%;">
+            <div class="profile-left-class-div">
+            </div>
+            <div class="profile-left-class-div-box" style="display:flex;">
+                <input class="profile-left-class-box" id="controlled-checkbox-id" type="checkbox" (click)="enableDisableContrPopup($event)" name="renewal" style="position:relative;width:3%;height:50%;top:12%;">
+                <input data-toggle="modal" id="controlled-button-id" data-target="#addDeleteContrSub" class="profile-left-class-box" style="height:100%;top:0%;width:25%;left:3%;text-align: center;opacity: 0.5;cursor:pointer;" type="button" name="controlled-substance" value="controlled" [(ngModel)]="controlledSubstance" [ngModelOptions]="{standalone: true}" disabled required>
+                <div style="position:relative;height:100%;width:5%;">
+                </div>
+                <input style="position: relative;width:18.5%;cursor:pointer;overflow-x: auto;font-size: smaller;" id="contrl-substance-show-id" value="Substances selected so far" type="button" />
+            </div>
+        </div>
+        <div style="position:relative;display:block;height:2.5%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-9" style="height:6%;">
+            <div class="profile-left-class-div" style="width:20%;">
+            </div>
+            <div class="profile-left-class-div-box" style="width:80%;display: flex;">
+                <div style="position: relative; width:47%"></div>
+                <button id="addDeletePlantButtonId" style="position:relative;width:18%;font-size: smaller;font-weight: 600;opacity: 0.5;cursor:pointer;" (click)="addNewPlantDetails();" disabled>Add new Plant details</button>
+            </div>
+        </div>
+        <div style="position:relative;display:block;height:1%;width:100%;"></div>
+        <div class="profile-left-class" id="profile-left-div-9" style="height:7%;">
+            <div class="profile-left-class-div" style="width:20%;">
+            </div>
+            <div class="profile-left-class-div-box" style="width:80%;display: flex;">
+                <input type="button" id="profile-save-button" value="Save" (click)="saveUserPlantSubstanceDetails();">
+                <input type="button" style="opacity: 0.5;cursor: pointer;" id="profile-update-button" value="Update Profile" (click)="updateUserPlantSubstanceDetails();" disabled>
+            </div>
+        </div>
+        <p *ngIf="saveDataFlag" style="position:relative;text-align:center;width:100%;color:red;left:5%;">{{saveDataMsg}}</p>
+        
+    </div>
+
+    <!-- Add/Delete Psychotropic substances Popup html starts-->
+
+    <div class="modal fade" id="addDeletePsySub" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="position: relative; height: 88%;">
+          <div class="modal-content" style="position:relative;width:80%;height: 100%;">
+            <div class="modal-header border-bottom-0" style="position:relative;height:8%;">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body" style="position:relative;height:92%;">
+              <div class="form-title text-center" style="position:relative;height:5%;">
+                <h4>Add/Delete Psychotropic Substances</h4>
+              </div>
+              <div class="d-flex flex-column text-center" style="position:relative;height:43%;top:2%;">
+                <div id="list1" class="dropdown-check-list" tabindex="100" style="position:relative;height:100%;overflow:auto;">
+                    <span class="anchor" (click)="showHidePsySubSubstances();">Select Substances</span>
+                    <ul class="items" style="position: relative;width:95%;left:2.5%;">
+                        <li style="position: relative;text-align: left; font-size: smaller;" *ngFor="let psychosub of pyschoSubList"><input (click)="addPsychoSubToSelectedList($event);" type="checkbox" [attr.id]="'psy-' + psychosub.serialNo" />{{psychosub.substanceName}}</li>
+                    </ul>
+                  </div>
+              </div>
+              <hr style="position: relative;top:7px;margin-top: 0;margin-bottom: 0;border-style: inset;">
+              <div style="position:relative;height:47%;overflow:auto;top:2%;">
+                <h4 style="position:relative;text-align:center;height:7%;">Substances selected by User:</h4>
+                <table class="table" style="position:relative;width:100%;" id="psycho-sub-table-id">
+                    <thead style="position:relative;width:100%;">
+                      <tr style="position:relative;width:100%;display: contents;">
+                        <th style="position:relative;width:25%;">Serial No</th>
+                        <th style="position:relative;width:40%;">Substance Name</th>
+                      </tr>
+                    </thead>
+                    <tbody id="document-table-body-id">
+                      <tr *ngFor="let psychosub of selectedPyschoSubList" style="position:relative;width:100%;display:table-row;">
+                        <td style="position:relative;width:15%;">{{psychosub.serialNo}}</td>
+                        <td style="position:relative;width:35%;">{{psychosub.substanceName}}</td>
+                        <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:18%;top:5px;height:10%;position: relative;" (click)="deletePsychoSub($event);">Delete</button>
+                      </tr>
+                    </tbody>
+        
+                  </table>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <!-- Add/Delete Psychotropic substances Popup html ends-->
+
+
+      <!-- Add/Delete Narcotics substances Popup html starts-->
+
+    <div class="modal fade" id="addDeleteNarcoSub" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="position: relative; height: 88%;">
+          <div class="modal-content" style="position:relative;width:80%;height: 100%;">
+            <div class="modal-header border-bottom-0" style="position:relative;height:8%;">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body" style="position:relative;height:92%;">
+              <div class="form-title text-center" style="position:relative;height:5%;">
+                <h4>Add/Delete Narcotics Substances</h4>
+              </div>
+              <div class="d-flex flex-column text-center" style="position:relative;height:43%;top:2%;">
+                <div id="list2" class="dropdown-check-list" tabindex="100" style="position:relative;height:100%;overflow:auto;">
+                    <span class="anchor" (click)="showHideNarcoSubSubstances();">Select Substances</span>
+                    <ul class="items" style="position: relative;width:95%;left:2.5%;">
+                        <li style="position: relative;text-align: left; font-size: smaller;" *ngFor="let narcosub of narcoSubList"><input (click)="addNarcoSubToSelectedList($event);" type="checkbox" [attr.id]="'nar-' + narcosub.serialNo" />{{narcosub.substanceName}}</li>
+                    </ul>
+                  </div>
+              </div>
+              <hr style="position: relative;top:7px;margin-top: 0;margin-bottom: 0;border-style: inset;">
+              <div style="position:relative;height:47%;overflow:auto;top:2%;">
+                <h4 style="position:relative;text-align:center;height:7%;">Substances selected by User:</h4>
+                <table class="table" style="position:relative;width:100%;" id="psycho-sub-table-id">
+                    <thead style="position:relative;width:100%;">
+                      <tr style="position:relative;width:100%;display: contents;">
+                        <th style="position:relative;width:25%;">Serial No</th>
+                        <th style="position:relative;width:40%;">Substance Name</th>
+                      </tr>
+                    </thead>
+                    <tbody id="document-table-body-id">
+                      <tr *ngFor="let narcosub of selectedNarcoSubList" style="position:relative;width:100%;display:table-row;">
+                        <td style="position:relative;width:15%;">{{narcosub.serialNo}}</td>
+                        <td style="position:relative;width:35%;">{{narcosub.substanceName}}</td>
+                        <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:18%;top:5px;height:10%;position: relative;" (click)="deleteNarcoSub($event);">Delete</button>
+                      </tr>
+                    </tbody>
+        
+                  </table>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <!-- Add/Delete Narcotics substances Popup html ends-->
+
+
+      <!-- Add/Delete Controlled substances Popup html starts-->
+
+    <div class="modal fade" id="addDeleteContrSub" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="position: relative; height: 88%;">
+        <div class="modal-content" style="position:relative;width:80%;height: 100%;">
+          <div class="modal-header border-bottom-0" style="position:relative;height:8%;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="position:relative;height:92%;">
+            <div class="form-title text-center" style="position:relative;height:5%;">
+              <h4>Add/Delete Controlled Substances</h4>
+            </div>
+            <div class="d-flex flex-column text-center" style="position:relative;height:43%;top:2%;">
+              <div id="list3" class="dropdown-check-list" tabindex="100" style="position:relative;height:100%;overflow:auto;">
+                  <span class="anchor" (click)="showHideControlledSubSubstances();">Select Substances</span>
+                  <ul class="items" style="position: relative;width:95%;left:2.5%;">
+                      <li style="position: relative;text-align: left; font-size: smaller;" *ngFor="let contrsub of contrSubList"><input (click)="addContrlSubToSelectedList($event);" type="checkbox" [attr.id]="'ctr-' + contrsub.serialNo" />{{contrsub.substanceName}}</li>
+                  </ul>
+                </div>
+            </div>
+            <hr style="position: relative;top:7px;margin-top: 0;margin-bottom: 0;border-style: inset;">
+            <div style="position:relative;height:47%;overflow:auto;top:2%;">
+              <h4 style="position:relative;text-align:center;height:7%;">Substances selected by User:</h4>
+              <table class="table" style="position:relative;width:100%;" id="psycho-sub-table-id">
+                  <thead style="position:relative;width:100%;">
+                    <tr style="position:relative;width:100%;display: contents;">
+                      <th style="position:relative;width:25%;">Serial No</th>
+                      <th style="position:relative;width:40%;">Substance Name</th>
+                    </tr>
+                  </thead>
+                  <tbody id="document-table-body-id">
+                    <tr *ngFor="let contrsub of selectedContrSubList" style="position:relative;width:100%;display:table-row;">
+                      <td style="position:relative;width:15%;">{{contrsub.serialNo}}</td>
+                      <td style="position:relative;width:35%;">{{contrsub.substanceName}}</td>
+                      <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:18%;top:5px;height:10%;position: relative;" (click)="deleteContrlSub($event);">Delete</button>
+                    </tr>
+                  </tbody>
+      
+                </table>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+    </div>
+    <!-- Add/Delete Controlled substances Popup html ends-->
+
+
+
+    <input type="button" id="submit-for-approval" style="opacity: 0.5; cursor:pointer;" value="Submit for Approval" disabled>
+    <div class="profile-space">
+
+    </div>
+</div>

@@ -1,0 +1,103 @@
+<div id="document-master-main-div">
+    <div id="document-master-header">
+        <h2 style="position:relative;text-align:center;">Admin</h2>
+    </div>
+    <div id="document-master-body" style="overflow:auto;">
+
+        <!-- Document Master HTML starts-->
+
+        <div class="container" style="position:relative;left:12.5%;">
+          <div style="position:relative;display:flex;">
+              <h3>Document Master</h3>
+              <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;width:6%;height:10%;left:2%;top:20px;position: relative;" data-toggle="modal" data-target="#addDocumentModal">Add</button>
+              <button id="document-show-hide-button" style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;width:6%;height:10%;left:6%;top:20px;position: relative;" (click)="showHideDocumentMaster()">Hide</button>
+          </div>            
+          <table class="table" style="position:relative;width:75%;" id="document-table-id">
+            <thead>
+              <tr>
+                <th>Serial No</th>
+                <th>Document Name</th>
+                <th>Document Short Code</th>
+              </tr>
+            </thead>
+            <tbody id="document-table-body-id">
+              <tr *ngFor="let document of documentList" style="position:relative;width:100%;display:table-row;">
+                <td style="position:relative;width:15%;">{{document.serialNo}}</td>
+                <td style="position:relative;width:35%;">{{document.documentName}}</td>
+                <td style="position:relative;width:21%;">{{document.documentShortCode}}</td>
+                <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:12%;height:10%;top:5px;position: relative;" (click)="editDocument(document.serialNo);">Edit</button>
+                <button style="background:#4472C4;color:white;border-radius: 5px;border-color: #4472C4;border-style:dashed;left:18%;top:5px;height:10%;position: relative;" (click)="deleteDocument(document.serialNo);">Delete</button>
+              </tr>
+            </tbody>
+
+          </table>
+
+          <!-- Add Document Popup html starts-->
+         <div class="modal fade" id="addDocumentModal" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="position:relative;width:80%;">
+              <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-title text-center">
+                  <h4>Add Document</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                  <form ngNativeValidate>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter document" [(ngModel)]="newDocumentName" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter document Short Code" [(ngModel)]="newDocumentShortCode" [ngModelOptions]="{standalone: true}" autocomplete="on" required>
+                    </div>
+                    <button style="position: relative; height: 100%; width: 40%" type="submit" class="btn btn-success" (click)="addNewDocument();">Save</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+        <!-- Add Document popup html ends-->
+
+
+        <!-- Edit Document Popup html starts-->
+        <div class="modal fade" id="editDocumentModal" style="top:22%;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="position:relative;width:80%;">
+              <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-title text-center">
+                  <h4>Edit Document</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                  <form ngNativeValidate>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter document" [(ngModel)]="documentName" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter document Short Code" [(ngModel)]="documentShortCode" [ngModelOptions]="{standalone: true}" autocomplete="on" required>
+                    </div>
+                    <button style="position: relative; height: 100%; width: 40%" type="submit" class="btn btn-success" (click)="updateDocument();">Update</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

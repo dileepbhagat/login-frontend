@@ -1,0 +1,271 @@
+<div id="profile-main-div">
+    <div class="profile-space">
+
+    </div>
+    <div id="profile-center-div">
+        <div class="profile-center-div-class" style="border-right: 3px dotted #4472C4;">
+            <div class="profile-left-class" id="profile-left-div-1">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Entity Type:</p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <select class="profile-left-class-box" [(ngModel)]="entityType" [ngModelOptions]="{standalone: true}">
+                        <option value="Manufacturer">Manufacturer</option>  
+                        <option value="Trader">Trader</option>
+                        <option value="Wholesaler">Wholesaler</option>
+                        <option value="R&D">R&D</option>   
+                    </select>
+                    <label class="required"></label> 
+                </div>
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-left-class" id="profile-left-div-2">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Entity Name:</p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <input class="profile-left-class-box" type="text" name="entity-name" [(ngModel)]="entityName" [ngModelOptions]="{standalone: true}" disabled required>
+                    <label class="required"></label> 
+                </div>
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-left-class" id="profile-left-div-3">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Address:</p>
+                </div>  
+                <div class="profile-left-class-div-box">
+                    <input class="profile-left-class-box" type="text" name="address" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required"></label> 
+                </div>     
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-left-class" id="profile-left-div-4">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p"></p>
+                </div>
+                <div class="profile-left-class-div-box" style="display:flex;">
+                    <input class="profile-left-class-box" style="width:15%;font-size:small;font-weight: 600;" type="text" name="pincode" [(ngModel)]="pincode" placeholder="pin" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                    <div style="position:relative;display:block;width:3%;"></div>
+                    <input class="profile-left-class-box" style="width:25%;font-size:small;font-weight: 600;" type="text" name="state" [(ngModel)]="state" placeholder="state" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                    <div style="position:relative;display:block;width:3%;"></div>
+                    <input class="profile-left-class-box" style="width:30%;font-size:small;font-weight: 600;" type="text" name="city" [(ngModel)]="city" placeholder="city" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                </div>       
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-left-class" style="background: rgb(255,218,149);" id="profile-left-div-5">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Designated Person:</p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <select style="background: rgb(255,218,149);" class="profile-left-class-box" [(ngModel)]="designatedPerson" [ngModelOptions]="{standalone: true}">
+                        <option value="Manufacturer Trader">MD</option>  
+                        <option value="Wholesaler R&D">Chairman</option>
+                        <option value="Wholesaler R&D">Director</option>
+                        <option value="Wholesaler R&D">Authorised Person</option>   
+                    </select>
+                    <label class="required"></label> 
+                </div>        
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;background: rgb(255,218,149);"></div>
+            <div class="profile-left-class" id="profile-left-div-6" style="background: rgb(255,218,149);">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Name:</p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <input class="profile-left-class-box" style="background: rgb(255,218,149);" type="text" name="name" [(ngModel)]="designatedPersonName" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required"></label> 
+                </div>       
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;background: rgb(255,218,149);"></div>
+            <div class="profile-left-class" id="profile-left-div-7" style="background: rgb(255,218,149);">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Telephone No:</p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <input class="profile-left-class-box" style="background: rgb(255,218,149);" type="text" name="telephone-no" [(ngModel)]="designatedPersonTelephoneNo" [ngModelOptions]="{standalone: true}" required> 
+                </div>        
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;background: rgb(255,218,149);"></div>
+            <div class="profile-left-class" id="profile-left-div-8" style="background: rgb(255,218,149);">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Fax No:</p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <input class="profile-left-class-box" style="background: rgb(255,218,149);" type="text" name="fax-no" [(ngModel)]="designatedPersonFaxNo" [ngModelOptions]="{standalone: true}" required> 
+                </div>        
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;background: rgb(255,218,149);"></div>
+            <div class="profile-left-class" id="profile-left-div-9" style="background: rgb(255,218,149);">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p"></p>
+                </div>
+                <div class="profile-left-class-div-box">
+                    <button class="profile-left-class-box" value="Add additional designated Person" style="background: rgb(255,218,149);width:55%;left:25%;font-size:x-small;top:6%;font-weight: 600;" name="addl-desgn-person" (click)="addDesgnPerson();">Add additional designated Person</button>
+                </div>        
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <form [formGroup]="form">
+            <div class="profile-left-class" id="profile-left-div-10">
+                <div class="profile-left-class-div">
+                    <p class="profile-left-class-div-p">Company Profile:</p>
+                </div>
+                <div class="profile-left-class-div-box" style="display:flex;">
+                    <input id="company-profile-id" class="profile-left-class-box" type="file" value="Attach" name="profile-file" [(ngModel)]="profileFile" [ngModelOptions]="{standalone: true}" accept=".pdf" required>
+                    <label class="required" style="position:relative;top:15%;"></label> 
+                </div>     
+            </div>
+        </form>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+        </div>
+        <div class="profile-center-div-class" style="border-right: 3px dotted #4472C4;">
+            <div class="profile-center-class" id="profile-center-div-1">
+                <div class="profile-center-class-div">
+                    <p class="profile-center-class-div-p">Sales Tax No:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="display:flex;">
+                    <input class="profile-center-class-box" style="width:45%;font-size:small;font-weight: 600;" type="text" name="salex-tax-no" [(ngModel)]="salesTaxNo" [ngModelOptions]="{standalone: true}" required>
+                    <div style="position:relative;display:block;width:5%;"></div>
+                    <input class="profile-center-class-box" style="width:30%;font-size:small;font-weight: 600;" type="file" name="sales-tax-file" [(ngModel)]="salesTaxFile" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-2">
+                <div class="profile-center-class-div">
+                    <p class="profile-center-class-div-p">Central Excise No:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="display:flex;">
+                    <input class="profile-center-class-box" style="width:45%;font-size:small;font-weight: 600;" type="text" name="central-excise-no" [(ngModel)]="centralExciseNo" [ngModelOptions]="{standalone: true}" required>
+                    <div style="position:relative;display:block;width:5%;"></div>
+                    <input class="profile-center-class-box" style="width:30%;font-size:small;font-weight: 600;" type="file" name="central-excise-file" [(ngModel)]="centralExciseFile" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-3">
+                <div class="profile-center-class-div">
+                    <p class="profile-center-class-div-p">Pan No:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="display:flex;">
+                    <input class="profile-center-class-box" style="width:45%;font-size:small;font-weight: 600;" type="text" name="pan-no" [(ngModel)]="panNo" [ngModelOptions]="{standalone: true}" disabled required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                    <div style="position:relative;display:block;width:3%;"></div>
+                    <input id="pan-no-id" class="profile-center-class-box" style="width:30%;font-size:small;font-weight: 600;" type="file" name="pan-no-file" [(ngModel)]="panNoFile" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                </div>
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-4">
+                <div class="profile-center-class-div">
+                    <p class="profile-center-class-div-p">Balance Sheet</p>
+                    <p style="top:0%;"class="profile-center-class-div-p">(Last 3 years):</p>
+                </div>
+                <div class="profile-center-class-div-box" style="display:flex;">
+                    <input id="balance-sheet-id" class="profile-center-class-box" type="file" value="Attach" name="balance-sheet" [(ngModel)]="balanceSheetFile" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label> 
+                </div>     
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-5" style="font-size:small;height:13%;">
+                <div class="profile-center-class-div" style="width:37%;">
+                    <p class="profile-center-class-div-p" style="word-break:break-all;">Name of concerned Jurisdictional Commissionerate of Customs & Central Excise:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="left:3%;top:15%;display: flex;">
+                    <input class="profile-center-class-box" style="width:45%;font-size:small;font-weight: 600;" type="text" name="name" [(ngModel)]="commissionerateName" placeholder="name" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:22%;"></label>
+                    <div style="position:relative;display:block;width:3%;"></div>
+                    <select style="width:30%;" class="profile-center-class-box" [(ngModel)]="commissionerateCity" [ngModelOptions]="{standalone: true}">
+                        <option value="Haldwani">Haldwani</option>  
+                        <option value="Dehradun">Dehradun</option>  
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                    <label class="required" style="position:relative;top:22%;"></label> 
+                </div>     
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-6" style="font-size:small;height:13%;top:1%;">
+                <div class="profile-center-class-div" style="width:37%;top:5%;">
+                    <p class="profile-center-class-div-p" style="word-break:break-all;">Amount of Excise duties paid by company during last 3 years:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="left:3%;top:15%;display: flex;">
+                    <input class="profile-center-class-box" style="font-size:small;font-weight: 600;" type="text" name="amount-of-excise-duties" [(ngModel)]="amountOfExciseDuties" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:22%;"></label>
+                </div>     
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-7" style="top:2.5%;">
+                <div class="profile-center-class-div">
+                    <p class="profile-center-class-div-p">GST No:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="display:flex;">
+                    <input class="profile-center-class-box" style="width:45%;font-size:small;font-weight: 600;" type="text" name="gst-no" [(ngModel)]="gstNo" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                    <div style="position:relative;display:block;width:3%;"></div>
+                    <input id="gst-no-id" class="profile-center-class-box" style="width:30%;font-size:small;font-weight: 600;" type="file" name="gst-file" [(ngModel)]="gstFile" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                </div>
+            </div>
+            <div style="position:relative;display:block;height:1%;width:100%;"></div>
+            <div class="profile-center-class" id="profile-center-div-8" style="top:2%;">
+                <div class="profile-center-class-div">
+                    <p class="profile-center-class-div-p">IEC Code:</p>
+                </div>
+                <div class="profile-center-class-div-box" style="display:flex;">
+                    <input class="profile-center-class-box" style="width:45%;font-size:small;font-weight: 600;" type="text" name="iec-code" [(ngModel)]="iecCode" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                    <div style="position:relative;display:block;width:3%;"></div>
+                    <input id="iec-code-id" class="profile-center-class-box" style="width:30%;font-size:small;font-weight: 600;" type="file" name="iec-file" [(ngModel)]="iecFile" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>
+                </div>
+            </div>
+        </div>
+        <div class="profile-center-div-class">
+            <div class="profile-right-class" id="profile-right-div-1">
+                <div class="profile-right-class-div">
+                    <p class="profile-right-class-div-p" style="word-break:break-all; font-size: small;">Details of export/import of Narcotic Drugs and Psychotropic Substances by
+                        the company during the last three calendar years (1st January to 31st December).
+                    </p>
+                </div>
+                <div class="profile-right-class-div-box" style="display:flex;">
+                    <input id="import-export-id" class="profile-right-class-box" type="file" value="Attach" name="import-export-file" [(ngModel)]="importExportFile" [ngModelOptions]="{standalone: true}" required>
+                    <label class="required" style="position:relative;top:15%;"></label>  
+                </div>
+            </div>
+            <div class="profile-right-class" id="profile-right-div-2" style="top:0%;">
+                <div class="profile-right-class-div">
+                    <p class="profile-right-class-div-p" style="word-break:break-all; font-size: small; top:0%;">Original Authority letter (in company's/firm's letterhead) for signatories sigining on
+                        behalf of the company/firm issued by the Board of Directors/Partners/Proprietors
+                    </p>
+                </div>
+                <div class="profile-right-class-div-box" style="top:0%;">
+                    <input class="profile-right-class-box" type="file" value="Attach" name="authority-file" [(ngModel)]="authorityFile" [ngModelOptions]="{standalone: true}" required>  
+                </div>
+            </div>
+            <div class="profile-right-class" id="profile-right-div-3" style="height:12%;">
+                <div class="profile-right-class-div" style="width:40%;">
+                    <p class="profile-right-class-div-p">NCB URN No:</p>
+                </div>
+                <div class="profile-right-class-div-box" style="display:flex;left:0%;top:0%;width:60%;height:100%;">
+                    <input class="profile-right-class-box" style="width:50%;font-size:small;font-weight: 600;top:0%;" type="text" name="ncb-urn-no" [(ngModel)]="ncbUrnNo" [ngModelOptions]="{standalone: true}" required>
+                    <div style="position:relative;display:block;width:8%;"></div>
+                    <input class="profile-right-class-box" style="width:40%;font-size:small;font-weight: 600;top:0%;" type="file" name="ncb-urn-file" [(ngModel)]="ncbUrnFile" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div style="position:relative;height:8%;width:100%;top:8%;">
+                <input type="button" id="profile-save-button" value="Save" (click)="saveProfileData('false');">
+            </div>
+            <p *ngIf="emptyFields" style="color:red;position: relative;text-align: center;top:10%">Please enter all entries & upload all required files!</p>
+            <div style="position:relative;height:8%;width:100%;top:12%;">
+                <input type="button" id="profile-update-button" value="Update Profile" (click)="saveProfileData('true');">
+            </div>
+            <div style="position:relative;height:6%;width:80%;top:15%;left:10%;">
+                <input type="button" id="profile-next-button" value="Next" (click)="nextProfilePage();">
+            </div>
+        </div>
+    </div>
+    <div class="profile-space">
+
+    </div>
+</div>

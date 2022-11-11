@@ -1,0 +1,102 @@
+#verify-main-div
+{
+    position:relative;
+    height: 100%;
+    width:100%;
+    display:block;
+    top:-3.5%;
+}
+
+#verify-register-sub-div
+{
+    position: relative;
+    height:90%;
+    width:100%;
+    display: block;
+    top:10%;
+}
+
+h1
+{
+    position: relative;
+    text-align: center;
+}
+
+.verify-email-class
+{
+    display:flex;
+    position:relative;
+    width:100%;
+}
+
+#otp-div-p
+{
+    position:relative;
+    width:30%;
+    font-size: xx-small;
+    font-weight: 600;
+}
+
+#otp-div-input
+{
+    position: relative;
+    width:50%;
+    height:60%;
+}
+
+.app-register-req
+{
+    position: relative;
+    display: block;
+    width:3%;
+    left:10%;
+}
+
+.required:after 
+{
+    content:" *";
+    color: red;
+}
+
+#verify-div
+{
+    width:50%;
+    left:22%;
+    position: relative;
+    color:red;
+    text-align: center;
+    top:5%;
+}
+
+#verify-div-button
+{
+    border-radius: 4px;
+    border-style:dashed;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color:white;
+    position: relative;
+    left:5%;
+}
+
+#app-register-popup-verify
+{
+    position: relative;
+    color:white;
+    width:15%;
+    border-radius: 5px;
+    border-style:dashed;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    top:10px;
+}
+
+#popup-verify-div
+{
+    width:50%;
+    left:25%;
+    position: relative;
+    color:red;
+    text-align: center;
+    top:15px;
+}

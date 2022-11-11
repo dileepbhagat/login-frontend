@@ -1,0 +1,100 @@
+#show-user-main-div
+{
+    position: relative;
+    display: block;
+    height: 100%;
+    width:100%;
+    top:-3.5%;
+    overflow: auto;
+}
+
+#show-user-top-div, #show-user-bottom-division-div
+{
+    position:relative;
+    display: block;
+    height: 10%;
+    width:100%;
+}
+
+#show-user-top-div-hr
+{
+    border-top: 1px solid black;
+}
+
+#show-user-input-div, #show-user-output-div
+{
+    position:relative;
+    display: block;
+    height: 20%;
+    width: 100%;
+}
+
+.show-user-class
+{
+    position: relative;
+    display: flex;
+    height: 95%;
+    width:100%;
+}
+
+.show-user-class-div
+{
+    position: relative;
+    display: block;
+    height: 100%;
+    width:25%;
+}
+
+.show-user-class-div-p
+{
+    position: relative;
+    text-align: justify;
+    vertical-align: middle;
+    top:30%;
+    font-weight: 600;
+}
+
+.show-user-class-div-box
+{
+    position: relative;
+    display: block;
+    height:100%;
+    width:75%;
+}
+
+.show-user-class-box
+{
+    position: relative;
+    top: 25%;
+    height: 50%;
+    border: 1px solid #797E88;
+    border-radius: 6px;
+    width:65%;
+}
+
+#show-user-middle1-div, #show-user-middle2-div
+{
+    position:relative;
+    display: block;
+    height: 38%;
+    width:50%;
+    left:25%;
+}
+
+#show-user-top-div-data, #show-user-bottom-div-data, #show-user-bottom-division-div-data
+{
+    position: relative;
+    display: block;
+    height: 48%;
+    width:100%;
+}
+
+#show-user-top-div-div
+{
+    position: relative;
+    display: flex;
+    width:20%;
+}
+
+
+

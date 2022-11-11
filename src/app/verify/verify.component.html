@@ -1,0 +1,13 @@
+<div id="verify-main-div">
+    <div id="verify-register-sub-div">
+        <h1 *ngIf="isEmailVerified">Congratulations, your email has been </h1>
+        <h1 *ngIf="isEmailVerified">verified.</h1>
+        <h1 *ngIf="!isEmailVerified">Sorry, we couldn't verify your email. It</h1>
+        <h1 *ngIf="!isEmailVerified">maybe already verified, or verification </h1>
+        <h1 *ngIf="!isEmailVerified">code is incorrect</h1>
+        <div *ngIf="isEmailVerified" style="position:relative;text-align:center;">
+            <p>Please click below to set password!</p>
+            <a style="cursor: pointer;" (click)="navigateToSetPassword()" >Set Password</a>
+        </div>
+    </div>
+</div>

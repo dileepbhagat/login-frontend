@@ -1,0 +1,23 @@
+#process-register-main-div
+{
+    position:relative;
+    height: 100%;
+    width:100%;
+    display:block;
+    top:-3.5%;
+}
+
+#process-register-sub-div
+{
+    position: relative;
+    height:90%;
+    width:100%;
+    display: block;
+    top:10%;
+}
+
+h1,p
+{
+    position:relative;
+    text-align:center;
+}

@@ -1,0 +1,77 @@
+<div id="register-main-div">
+    <div id="register-div-left">
+    </div>
+    <div id="register-div-body">
+        <div id="register-body-heading">
+            <p style="position:relative;text-align:center;vertical-align:middle;top:30%;color:#FDCC72;">Registration for Psychotropic Substances</p>
+        </div>
+        <div id="register-body-content">
+        <form id="register-form" ngNativeValidate>  
+            <label> Name of firm/company: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
+            <input type="text" name="firm-name" [(ngModel)]="firmName" [ngModelOptions]="{standalone: true}" size="75" required> 
+            <label class="required"></label><br> <br>
+            
+            <label style="font-weight:700;position: relative;width:100%;text-align: center;"> Firm/Company's details: </label><br>
+            <label> Address of firm/company: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <input type="text" name="address-line-1" placeholder="address-line-1" [(ngModel)]="addressLine1" [ngModelOptions]="{standalone: true}" size="75" required> <label class="required"></label><br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="address-line-2" placeholder="address-line-2" [(ngModel)]="addressLine2" [ngModelOptions]="{standalone: true}" size="75"/> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="address-line-3" placeholder="address-line-3" [(ngModel)]="addressLine3" [ngModelOptions]="{standalone: true}" size="75"/> <br> <br>
+            <label> Village/City: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
+            <input type="text" name="village-city" [(ngModel)]="villageOrCity" [ngModelOptions]="{standalone: true}" size="25" required><label class="required"></label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label> Pincode : </label>&nbsp;&nbsp;&nbsp;
+            <input type="text" name="pincode" [(ngModel)]="pincode" [ngModelOptions]="{standalone: true}" size="25" required> <label class="required"></label><br> <br>   
+            <label> State : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select [(ngModel)]="state" [ngModelOptions]="{standalone: true}">
+            <!--<option value="State">State</option>  -->
+            <option value="Uttarakhand">Uttarakhand</option>  
+            <option value="UP">UP</option>  
+            <option value="Delhi">Delhi</option>  
+            <option value="Rajasthan">Rajasthan</option>  
+            <option value="Haryana">Haryana</option>  
+            <option value="Tamilnadu">Tamilnadu</option>  
+            <option value="MP">MP</option>  
+            </select> 
+            <label class="required" style="position:relative;left:0.4%;"></label> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label> District : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+            <select [(ngModel)]="district" [ngModelOptions]="{standalone: true}">
+                <!--<option value="District">District</option>   -->
+                <option value="South Delhi">South Delhi</option>  
+                <option value="Lucknow">Lucknow</option>  
+                <option value="Nainital">Nainital</option>  
+            </select>
+            <label class="required" style="position:relative;left:0.4%;"></label>
+            <br>
+            <br>  
+
+            <label> Pan No: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="pan-no" name="pan-no" [(ngModel)]="panNo" [ngModelOptions]="{standalone: true}" size="75" required> <label class="required"></label><br><br>  
+            
+            <label style="font-weight:700;position: relative;width:100%;text-align: center;">Authorised Signatory:</label><br>
+            <label> Mobile no : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="tel" id="telephone" [(ngModel)]="mobNo" [ngModelOptions]="{standalone: true}" size="75" name="telephone"><label class="required"></label><br><br>
+
+            <label> Email Id: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            <input type="email" id="email" style="left:0.25%;position: relative;" name="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" size="75" required>&nbsp;<label class="required"></label>   
+            <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" (click)="generateOTP();">Generate OTP</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" (click)="generateOTP();">Resend OTP</button> <br><br>
+            
+            <p *ngIf="showOTPGenerationFlag" style="color:red;position: relative;text-align: center;left:5%;">{{showOTPGenerationMsg}}</p>
+           <!-- <p *ngIf="showOTPGenerationMsg" style="color:red;position: relative;text-align: center;left:5%;">OTP generated sucessfully!</p> -->
+            <label> Enter OTP: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="enter-otp" name="enter-otp" [(ngModel)]="enterOTP" [ngModelOptions]="{standalone: true}" size="75" required><label class="required"></label><br><br>
+            <p *ngIf="showOTPValidationMsg" style="color:red;position: relative;text-align: center;left:5%;">{{showOTPValidationMsg}}</p>
+           <!-- <p *ngIf="showOTPValidationMsg" style="color:red;position: relative;text-align: center;left:5%;">Entered OTP is wrong!</p> -->
+            <input type="submit" id="register-submit" value="Submit" (click)="validateOTPAndRegisterFirm();"/>
+            <p *ngIf="showRegistrationFlag" style="color:red;position: relative;text-align: center;left:5%;">{{showRegistrationMsg}}</p>  
+        </form>
+    </div>
+    </div>
+    <div id="register-div-right">
+    </div>
+</div>

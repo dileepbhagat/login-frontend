@@ -1,0 +1,199 @@
+.required:after 
+{
+    content:" *";
+    color: red;
+}
+
+#profile-main-div
+{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    top:-3%;
+}
+
+.profile-space
+{
+    position:relative;
+    display:block;
+    height:100%;
+    width:2.5%;
+}
+
+#profile-center-div
+{
+    position:relative;
+    display:flex;
+    height:86%;
+    width:95%;
+    top:2.5%;
+    border: 2px solid #797E88;
+    border-radius: 20px;
+}
+
+.profile-center-div-class
+{
+    position: relative;
+    display: block;
+    top:2%;
+    height:96%;
+    width:33.33%;
+}
+
+.profile-left-class
+{
+    position: relative;
+    display: flex;
+    height: 9%;
+    width:100%; 
+}
+
+.profile-left-class-div
+{
+    position: relative;
+    display: block;
+    height: 100%;
+    width:33%;
+}
+
+.profile-left-class-div-p
+{
+    position: relative;
+    text-align: justify;
+    vertical-align: middle;
+    top:25%;
+    left:5%;
+}
+
+.profile-left-class-div-box
+{
+    position: relative;
+    display: block;
+    height:100%;
+    width:67%;
+}
+
+.profile-left-class-box
+{
+    position: relative;
+    top: 25%;
+    height: 75%;
+    border: 1px solid #797E88;
+    border-radius: 6px;
+    width:80%;
+}
+
+.profile-center-class
+{
+    position: relative;
+    display: flex;
+    height: 11%;
+    width:100%;
+}
+
+.profile-center-class-div
+{
+    position: relative;
+    display: block;
+    height: 100%;
+    width:40%;
+}
+
+.profile-center-class-div-p
+{
+    position: relative;
+    text-align: justify;
+    vertical-align: middle;
+    top:25%;
+    left:5%;
+}
+
+.profile-center-class-div-box
+{
+    position: relative;
+    display: block;
+    height:100%;
+    width:60%;
+}
+
+.profile-center-class-box
+{
+    position: relative;
+    top: 25%;
+    height: 75%;
+    border: 1px solid #797E88;
+    border-radius: 6px;
+    width:80%;
+}
+
+.profile-right-class
+{
+    position: relative;
+    display: flex;
+    height: 25%;
+    width:100%;
+}
+
+.profile-right-class-div
+{
+    position: relative;
+    display: block;
+    height: 100%;
+    width:60%;
+}
+
+.profile-right-class-div-p
+{
+    position: relative;
+    text-align: justify;
+    vertical-align: middle;
+    top:10%;
+    left:5%;
+}
+
+.profile-right-class-div-box
+{
+    position: relative;
+    display: block;
+    height:36%;
+    width:32%;
+    left:6%;
+    top:10%;
+}
+
+.profile-right-class-box
+{
+    position: relative;
+    top: 25%;
+    height: 75%;
+    border: 1px solid #797E88;
+    border-radius: 6px;
+    width:100%;
+}
+
+#profile-save-button, #profile-next-button
+{
+    position: relative;
+    height: 100%;
+    width:25%;
+    left:37.5%;
+    background: #4472C4;
+    color:white;
+    border-radius: 5px;
+    border-color: #4472C4;
+    border-style: dashed;
+}
+
+#profile-update-button
+{
+    position: relative;
+    height: 100%;
+    width:25%;
+    left:74%;
+    background: #BF6425;
+    color:white;
+    border-radius: 5px;
+    border-color: #BF6425;
+    border-style: dashed;
+}

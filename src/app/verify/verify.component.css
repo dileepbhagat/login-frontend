@@ -1,0 +1,23 @@
+#verify-main-div
+{
+    position:relative;
+    height: 100%;
+    width:100%;
+    display:block;
+    top:-3.5%;
+}
+
+#verify-register-sub-div
+{
+    position: relative;
+    height:90%;
+    width:100%;
+    display: block;
+    top:10%;
+}
+
+h1
+{
+    position: relative;
+    text-align: center;
+}

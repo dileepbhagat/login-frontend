@@ -1,0 +1,127 @@
+#home-main-div
+{
+    position:relative;
+    height:100%;
+    width:100%;
+    display: block;
+}
+
+#my-carousel
+{
+    position: relative;
+    height: 50%;
+    width: 100%;
+}
+
+#img1, #img2, #img3, #img4
+{
+    position: relative;
+    height: 75%; 
+    width: 60%;
+    left:20%;
+    right:20%;
+    top:5%;
+}
+
+#gap-div
+{
+    position: relative;
+    height: 5%;
+    width: 100%;
+}
+
+#home-body-div
+{
+    position: relative;
+    height: 35%;
+    width:100%;
+    display: flex;
+}
+
+#whats-new-div
+{
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: block;
+}
+
+#wbar-id
+{
+    position: relative;
+    height: 15%;
+    width:100%;
+    display: block;
+}
+
+#marquee-id
+{
+    position: relative;
+    height: 85%;
+    width:100%;
+    display: block;
+}
+
+#about-ceib-div
+{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: block;
+}
+
+#about-ceib-header
+{
+    position: relative;
+    height:15%;
+    width:100%;
+    display: block;
+}
+
+#about-ceib-body
+{
+    position: relative;
+    height:85%;
+    width: 100%;
+    display: block;
+    text-align: justify;
+}
+
+#other-sections-div
+{
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: block;
+    left:5%;
+    background-color: antiquewhite;
+}
+
+.other-sections-li
+{
+    border: 1px solid #ffffff;
+}
+
+.other-sections-a
+{
+    display: block;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff;
+    background: #224363;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+
+#home-below-div
+{
+    position: relative;
+    height: 10%;
+    width: 100%;
+    display: block;
+    background: #224363;
+    text-align: center;
+    color: #ffffff;
+    font-size: small;
+}
